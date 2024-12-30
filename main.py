@@ -3,7 +3,7 @@ from fastapi.responses import StreamingResponse
 import qrcode
 import qrcode.image.svg
 from io import BytesIO
-from mangum import Mangum
+from mangum import Mangum  # Mangum to handle AWS Lambda events
 
 app = FastAPI()
 
@@ -49,5 +49,5 @@ async def generate_qr(link: str = Form(...), filename: str = Form(...)):
         headers={"Content-Disposition": f"attachment; filename={filename}.svg"}
     )
 
-# Use Mangum handler to make the FastAPI app Lambda-compatible
+# Lambda handler for AWS Lambda compatibility (required for Netlify functions)
 handler = Mangum(app)

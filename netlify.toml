@@ -1,8 +1,2 @@
 [build]
-  functions = "functions"
-
-[[redirects]]
-  from = "/generate"
-  to = "/.netlify/functions/generate_qr"
-  status = 200
-  force = true
+  functions = "functions"  # Ensure this points to the correct functions folder
