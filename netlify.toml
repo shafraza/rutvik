@@ -1,0 +1,10 @@
+[build]
+  functions = "api"
+
+[functions]
+  python_version = "3.9"
+
+[[redirects]]
+  from = "/"
+  to = "/api/main/"
+  status = 200
