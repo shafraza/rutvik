@@ -1,10 +1,8 @@
 [build]
-  functions = "api"  # Directory containing serverless functions
-
-[functions]
-  node_bundler = "esbuild"  # Default bundler for serverless functions
+  functions = "functions"
 
 [[redirects]]
-  from = "/"
-  to = "/api/main/"
+  from = "/generate"
+  to = "/.netlify/functions/generate_qr"
   status = 200
+  force = true

@@ -3,6 +3,7 @@ from fastapi.responses import StreamingResponse
 import qrcode
 import qrcode.image.svg
 from io import BytesIO
+from mangum import Mangum
 
 app = FastAPI()
 
@@ -47,3 +48,6 @@ async def generate_qr(link: str = Form(...), filename: str = Form(...)):
         media_type="image/svg+xml",
         headers={"Content-Disposition": f"attachment; filename={filename}.svg"}
     )
+
+# Use Mangum handler to make the FastAPI app Lambda-compatible
+handler = Mangum(app)
