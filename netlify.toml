@@ -1,8 +1,8 @@
 [build]
-  functions = "api"
+  functions = "api"  # Directory containing serverless functions
 
 [functions]
-  python_version = "3.9"
+  node_bundler = "esbuild"  # Default bundler for serverless functions
 
 [[redirects]]
   from = "/"
