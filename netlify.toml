@@ -1,5 +1,0 @@
-[build]
-  functions = "api"  # Directory containing serverless functions
-
-[functions]
-  node_bundler = "esbuild"  # Default bundler for serverless functions
